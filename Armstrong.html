@@ -1,0 +1,216 @@
+<html>
+<title>
+Armstring Number
+</title>
+<head>
+<link rel="icon" type="image/x-icon" href="arm.jpg";
+</head>
+<style>
+body
+{
+background-image:url(Hcover.jpg);
+background-size:100% 100%;
+}
+.align
+{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+}
+img
+{
+display: block;
+height:50px;
+width:80px;
+margin-left: auto;
+margin-right: auto;
+border-radius:10%;
+}
+fieldset
+{
+background-color:#DCDCDC;
+width:420px;
+height:180px;
+border:2px solid #90EE90;
+border-bottom:none;
+border-radius:5px 5px 0px 0px;
+}
+#it
+{
+display:block;
+text-align:center;
+font-size:20px;
+margin:5px;
+}
+.bod
+{
+margin:10px 0px;
+border:1px solid black;
+}
+a
+{
+display:block;
+text-align:center;
+border-bottom:1px dashed black;
+padding:6px 0px;
+font-weight:bold;
+text-decoration:none;
+color:black;
+}
+a:hover
+{
+background-color:#00FF00;
+color:white;
+cursor:pointer;
+}
+a:active
+{
+background-color:#20B2AA;
+color:white;
+cursor:pointer;
+}
+.hd
+{
+font-weight:bold;
+font-family:;
+border:1px solid black;
+padding:10px 0px 5px 5px;
+}
+.sub
+{
+display:block;
+text-align:center;
+padding:5px 0px 5px 5px;
+}
+input
+{
+width:60px;
+height:30px;
+border-radius:5px;
+}
+#ans1
+{
+width:182px;
+height:30px;
+padding:0px 3px;
+}
+#ans2
+{
+width:182px;
+height:30px;
+padding:0px 3px;
+}
+input[type="number"]
+{
+padding:0px 5px;
+}
+#ans1
+{
+color:black;
+font-weight: bold;
+}
+button
+{
+background-color:black;
+color:white;
+cursor:pointer;
+height:19px;
+width: 30px;
+}
+button:hover
+{
+background-color:gray;
+color:black;
+}
+button:active
+{
+background-color:#FA8072;
+color:black;
+}
+#hid
+{
+display:block;
+text-align:center;
+background-color:black;
+color:white;
+border-radius:0px 0px 5px 5px;
+width:230;
+}
+#fot
+{
+cursor:pointer;
+opacity:0.75;
+}
+#fot:hover
+{
+opacity:1.5;
+}
+.ansbox
+{
+display:inline-block;
+border:1px solid black;
+color:black;
+background-color:white;
+width:40px;
+height:20px;
+border-radius:5px;
+}
+#err,#erro
+{
+display:block;
+text-align:center;
+color:red;
+font-weight:normal;
+}
+</style>
+<body>
+<script>
+function lcm()
+{
+var cou,two,c;
+c=Number(document.getElementById("va1").value);
+if((c<=0))
+{
+two="please enter the number (above zero)";
+document.getElementById("err").innerHTML=two;
+}
+else
+{
+two=null;
+document.getElementById("err").innerHTML=two;
+var temp=0,sum=0,r,c;
+temp=c;    
+while(c>0)    
+{    
+r=parseInt(c%10);    
+sum=sum+(r*r*r);    
+c=parseInt(c/10);    
+}    
+if(temp==sum) 
+{   
+cou="armstrong  number "; 
+}   
+else    
+{
+cou="not armstrong number"; 
+}  
+ans1.value=cou;
+}
+
+}
+</script>
+<div class="align">
+<fieldset>
+<img src="arm.jpg">
+<span id="it"><i><b>Armstrong Number</b></i></span>
+<div class="hd" style="border-bottom:1px dotted">Check of Armstrong No:
+<span class="sub"><input id="va1" type="number" > <button onclick="lcm()">=</button> <input id="ans1" disabled></span>
+<span id="err"></span>
+</div>
+</div>
+
+</fieldset>
+</div>
+</body>
+</html>

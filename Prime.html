@@ -1,0 +1,281 @@
+<html>
+<title>
+Prime Number
+</title>
+<head>
+<link rel="icon" type="image/x-icon" href="Prime no.jpg";
+</head>
+<style>
+body
+{
+background-image:url(Hcover.jpg);
+background-size:100% 100%;
+}
+.align
+{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+}
+img
+{
+display: block;
+height:50px;
+width:80px;
+margin-left: auto;
+margin-right: auto;
+border-radius:10%;
+}
+fieldset
+{
+background-color:#DCDCDC;
+width:420px;
+height:260px;
+border:2px solid #90EE90;
+border-bottom:none;
+border-radius:5px 5px 0px 0px;
+}
+#it
+{
+display:block;
+text-align:center;
+font-size:20px;
+margin:5px;
+}
+.bod
+{
+margin:10px 0px;
+border:1px solid black;
+}
+a
+{
+display:block;
+text-align:center;
+border-bottom:1px dashed black;
+padding:6px 0px;
+font-weight:bold;
+text-decoration:none;
+color:black;
+}
+a:hover
+{
+background-color:#00FF00;
+color:white;
+cursor:pointer;
+}
+a:active
+{
+background-color:#20B2AA;
+color:white;
+cursor:pointer;
+}
+.hd
+{
+font-weight:bold;
+font-family:;
+border:1px solid black;
+padding:10px 0px 5px 5px;
+}
+.sub
+{
+display:block;
+text-align:center;
+padding:5px 0px 5px 5px;
+}
+input
+{
+width:60px;
+height:30px;
+border-radius:5px;
+}
+#ans1
+{
+width:182px;
+height:30px;
+padding:0px 3px;
+font-weight: bold;
+}
+#ans2
+{
+width:182px;
+height:30px;
+padding:0px 3px;
+font-weight: bold;
+}
+input[type="number"]
+{
+padding:0px 5px;
+}
+#ans1,#ans2
+{
+color:black;
+}
+button
+{
+background-color:black;
+color:white;
+cursor:pointer;
+height:19px;
+width: 30px;
+}
+button:hover
+{
+background-color:gray;
+color:black;
+}
+button:active
+{
+background-color:#FA8072;
+color:black;
+}
+#hid
+{
+display:block;
+text-align:center;
+background-color:black;
+color:white;
+border-radius:0px 0px 5px 5px;
+width:230;
+}
+#fot
+{
+cursor:pointer;
+opacity:0.75;
+}
+#fot:hover
+{
+opacity:1.5;
+}
+.ansbox
+{
+display:inline-block;
+border:1px solid black;
+color:black;
+background-color:white;
+width:40px;
+height:20px;
+border-radius:5px;
+}
+#err,#erro
+{
+display:block;
+text-align:center;
+color:red;
+font-weight:normal;
+}
+</style>
+<body>
+<script>
+function lcm()
+{
+var cou,two,c;
+c=Number(document.getElementById("va1").value);
+if((c<=0))
+{
+two="please enter the number (above zero)";
+document.getElementById("err").innerHTML=two;
+}
+
+else if(c==1)
+{
+two=null;
+document.getElementById("err").innerHTML=two;
+cou="Neither Prime nor Composite";
+document.getElementById("ans1").innerHTML=cou;
+ans1.value=cou;
+}
+else
+{
+two=null;
+document.getElementById("err").innerHTML=two;
+var i, flag = 0;
+if(c==4)
+{
+cou ="is not a prime number";
+}
+else
+{
+for( i=2 ; i < c/2 ; i++)
+ {
+if(c%i == 0) 
+{
+cou ="is not a prime number";
+flag = 1;
+break;
+}
+}
+if(flag == 0)
+{
+  cou="is a prime number";
+ }
+}
+ans1.value=cou;
+}
+}
+function tlcm()
+{
+var a,b,disp,three,i,flag;
+var arr= new Array();
+a=Number(document.getElementById("v1").value);
+b=Number(document.getElementById("v2").value);
+if(((a<=0) && (b<=0)) || (b<=0) || (a<=0))
+{
+three="please enter the number (above zero)";
+document.getElementById("erro").innerHTML=three;
+}
+else if (b<a)
+{
+three="Second input must be greater";
+document.getElementById("erro").innerHTML=three
+}
+else
+{
+if(a==1)
+{
+a=a+1;
+}
+var k=0,j;
+three=null;
+document.getElementById("erro").innerHTML=three;
+for(i=a;i<b+1;i++)
+    {
+flag = 0;
+for (j = 2; j <= i/2; j++)
+ {
+if (i % j == 0) 
+{
+flag=1;
+break;
+}
+}
+if (flag == 0)
+{
+arr[k]=i;
+k++;
+}
+}
+ans2.value=arr;
+
+}
+}
+
+</script>
+<div class="align">
+<fieldset>
+<img src="Prime no.jpg">
+<span id="it"><i><b>Prime Number</b></i></span>
+<div class="hd" style="border-bottom:1px dotted">Check of Prime No:
+<span class="sub"><input id="va1" type="number" > <button onclick="lcm()">=</button> <input id="ans1" disabled></span>
+<span id="err"></span>
+</div>
+<div class="hd" style="border-bottom:1px dotted">Prime Nos:
+<span class="sub"><input id="v1" type="number" > , <input id="v2" type="number" > <button onclick="tlcm()">=</button> <input id="ans2" disabled></span>
+<span id="erro"></span>
+</div>
+</div>
+
+</fieldset>
+</div>
+</body>
+</html>
