@@ -171,9 +171,10 @@ function lcm()
 {
 var cou,two,c;
 c=Number(document.getElementById("va1").value);
+c=parseInt(c)
 if((c<=0))
 {
-two="please enter the number (above zero)";
+two="please enter the number (above one)";
 document.getElementById("err").innerHTML=two;
 }
 
@@ -219,9 +220,11 @@ var a,b,disp,three,i,flag;
 var arr= new Array();
 a=Number(document.getElementById("v1").value);
 b=Number(document.getElementById("v2").value);
-if(((a<=0) && (b<=0)) || (b<=0) || (a<=0))
+a=parseInt(a)
+b=parseInt(b)
+if((a<=0) || (b<=0))
 {
-three="please enter the number (above zero)";
+three="please enter the number (above one)";
 document.getElementById("erro").innerHTML=three;
 }
 else if (b<a)
