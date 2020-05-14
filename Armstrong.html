@@ -170,6 +170,7 @@ function lcm()
 {
 var cou,two,c;
 c=Number(document.getElementById("va1").value);
+c=parseInt(c);
 if((c<=0))
 {
 two="please enter the number (above zero)";
@@ -179,12 +180,24 @@ else
 {
 two=null;
 document.getElementById("err").innerHTML=two;
-var temp=0,sum=0,r,c;
-temp=c;    
+var temp=0,sum=0,r,c,rev,count=0,i;
+temp=c;
+rev=c; 
+while(rev>0)
+{
+r=parseInt(rev%10);
+rev=parseInt(rev/10)
+count++;
+}   
+if(count==1)
+{
+count=0;
+}
 while(c>0)    
 {    
-r=parseInt(c%10);    
-sum=sum+(r*r*r);    
+r=c%10; 
+r=Math.pow(r,count);    
+sum=sum+r;
 c=parseInt(c/10);    
 }    
 if(temp==sum) 
