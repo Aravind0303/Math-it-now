@@ -159,9 +159,11 @@ function lcm()
 var a,b,cou,two;
 a=Number(document.getElementById("v1").value);
 b=Number(document.getElementById("v2").value);
+a=parseInt(a)
+b=parseInt(b)
 if((a<=0) || (b<=0))
 {
-two="please enter the number (above zero)";
+two="please enter the number (above one)";
 document.getElementById("err").innerHTML=two;
 }
 else
